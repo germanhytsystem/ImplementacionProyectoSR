@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-def pelicula(BaseModel) :
+class Pelicula(BaseModel) :
     movieId : str
     title : str
     genres : str

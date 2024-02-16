@@ -1,5 +1,6 @@
 def schema_rating(rating) -> dict :
-    return {"userId":int(rating["userId"]),
+    return {"Id":str(rating["_id"]),
+            "userId":rating["userId"],
             "movieId":rating["movieId"],
             "rating":rating["rating"]}
     

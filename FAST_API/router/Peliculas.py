@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from models.pelicula import pelicula
+from models.pelicula import Pelicula
 from db.client import db_client 
 from schema.pelicula import schema_pelicula,schema_peliculas
 
@@ -31,13 +31,13 @@ async def get_pelicula_titulo(titulo: str, q: int = 0, p: int = 5):
     
     return peliculas_filtradas
     
-@router.post("/",response_model=pelicula)
-async def Peliculas(peli:pelicula ):
+@router.post("/",response_model=Pelicula)
+async def Peliculas(peli:Pelicula ):
     
     pelicula_dict = dict(peli)
     
     id = db_client.Movilends.movies.insert_one(pelicula_dict).inserted_id
     
-    new_pelicula = schema_pelicula(db_client.Movilends.movies.find_one({"id": id}))
+    new_pelicula = schema_pelicula(db_client.Movilends.movies.find_one({"movieId": id}))
     
-    return pelicula(new_pelicula)
+    return Pelicula(new_pelicula)
