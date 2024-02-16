@@ -1,5 +1,5 @@
 def schema_pelicula(pelicula) -> dict :
-    return {"movieId":str(pelicula["_id"]),
+    return {"movieId":str(pelicula["movieId"]),
             "title":pelicula["title"],
             "genres":pelicula["genres"]}
     

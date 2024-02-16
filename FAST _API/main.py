@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 from typing import Union
-from router import Peliculas,Login
+from router import Peliculas,Login,Ratings
+
 
 
 app = FastAPI()
 
 app.include_router(Peliculas.router)
 app.include_router(Login.router)
-
+app.include_router(Ratings.router)
 
 @app.get("/")
 async def read_root():
