@@ -14,16 +14,14 @@ def home():
         print(peliculasData)
         return render_template("index.html", data=peliculasData)
 
+    if request.form['peliculaid']:
+        return render_template("modal.html")
+
     if request.form['search']:
         url = "http://127.0.0.1:8000/Peliculas?id="+request.form['search']
         peliculas = requests.get(url)
         peliculasData = peliculas.json()
         return render_template("index.html", data=peliculasData['data'])
-
-    if request.form['peliculaid']:
-        return render_template("paginatest.html")
-    else:
-        return render_template("index.html")
 
 
 if __name__ == "__name__":
