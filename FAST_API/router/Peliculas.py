@@ -76,7 +76,7 @@ async def recomendar(userId: int):
     print("ratings", ratings)
 
     # Obtener las películas
-    movies = pd.DataFrame(list(db_client.Movilends.movies.find()))
+    movies = pd.DataFrame(list(db_client.Movilends.movies.find().limit(10000)))
     # Convertir ObjectId a string
     movies['_id'] = movies['_id'].astype(str)
     movies['movieId'] = movies['movieId'].astype(str)

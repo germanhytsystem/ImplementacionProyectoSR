@@ -1,11 +1,7 @@
 from typing import Annotated
 
-<<<<<<< HEAD
 from typing import Optional
-from fastapi import Depends, FastAPI,APIRouter,HTTPException
-=======
 from fastapi import Depends, FastAPI, APIRouter, HTTPException
->>>>>>> 5af82e46cac526fb07b58e4cf279a3b344ad0cf0
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
