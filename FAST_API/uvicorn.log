@@ -10713,3 +10713,25 @@ INFO:     198.235.24.108:61184 - "GET / HTTP/1.1" 200 OK
 INFO:     120.26.117.55:42780 - "GET /.env HTTP/1.1" 404 Not Found
 INFO:     205.210.31.30:61976 - "GET / HTTP/1.1" 200 OK
 INFO:     198.235.24.48:63518 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+Pinged your deployment. You successfully connected to MongoDB!
+INFO:     38.25.26.139:56410 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     38.25.26.139:56410 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     38.25.26.139:57658 - "GET /Peliculas/ HTTP/1.1" 200 OK
+INFO:     190.237.151.27:42400 - "GET /Peliculas HTTP/1.1" 307 Temporary Redirect
+INFO:     190.237.151.27:42400 - "GET /Peliculas/ HTTP/1.1" 200 OK
+INFO:     190.237.151.27:42400 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:42401 - "GET /recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:42388 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:11680 - "GET /Peliculas HTTP/1.1" 307 Temporary Redirect
+INFO:     190.237.151.27:11680 - "GET /Peliculas/ HTTP/1.1" 200 OK
+INFO:     190.237.151.27:11734 - "GET /Peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:11717 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:11666 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     190.237.151.27:11666 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     38.25.26.139:30641 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     38.25.26.139:13807 - "GET /peliculas/recomendar/50 HTTP/1.1" 404 Not Found
+INFO:     38.25.26.139:13807 - "GET /favicon.ico HTTP/1.1" 404 Not Found
