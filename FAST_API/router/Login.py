@@ -1,5 +1,6 @@
 from typing import Annotated
 
+from typing import Optional
 from fastapi import Depends, FastAPI,APIRouter,HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
@@ -29,9 +30,9 @@ fake_users_db = {
 
 class User(BaseModel):
     username: str
-    email: str | None = None
-    full_name: str | None = None
-    disabled: bool | None = None
+    email: Optional[str] = None
+    full_name: Optional[str] = None
+    disabled: Optional[bool] = None
 
 class UserInDB(User):
     hashed_password: str
