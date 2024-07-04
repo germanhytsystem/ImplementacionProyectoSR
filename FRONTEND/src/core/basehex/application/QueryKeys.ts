@@ -1,0 +1,1 @@
+export const LIST_MOVIES_ALL = "LIST_MOVIES_ALL";
