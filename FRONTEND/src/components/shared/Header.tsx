@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
@@ -13,6 +13,9 @@ const Navbar = () => {
       setShowMenu(false);
     }
   }
+
+  // recibir la ruta actual
+  const { pathname } = useLocation();
 
   return (
     <header className="w-full bg-primary-dark  flex flex-col flex-wrap overflow-x-hidden text-primary-light">
@@ -53,11 +56,15 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden sm:flex">
-            <Link to="/recomendacion">
-              <div className="bg-secondary-light px-4 py-2 rounded-[5px] text-black font-semibold hover:scale-[1.1] transition-all duration-300">
-                Recomendación
-              </div>
-            </Link>
+            {pathname !== "/recomendacion" && (
+              <>
+                <Link to="/recomendacion">
+                  <div className="bg-secondary-light px-4 py-2 rounded-[5px] text-black font-semibold hover:scale-[1.1] transition-all duration-300">
+                    Recomendación
+                  </div>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </motion.div>

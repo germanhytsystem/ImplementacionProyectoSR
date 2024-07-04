@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="container mx-auto py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="text-center sm:text-left">
-              <p>© 2024 MovieLens</p>
+              <p>© 2024 MovieLens for FISI UNMSM</p>
             </div>
           </div>
         </div>

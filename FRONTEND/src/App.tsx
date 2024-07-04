@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import Footer from "./components/shared/Footer";
 
 const Home = lazy(() => import("./pages/Home"));
+const Recomend = lazy(() => import("./pages/Recomend"));
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/recomendacion" element={<Recomend />} />
           </Routes>
         </Suspense>
         <Footer />

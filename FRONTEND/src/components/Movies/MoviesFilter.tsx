@@ -39,7 +39,7 @@ const MoviesFilter = ({ setSelectedGenre, movies }: IProps) => {
         Género
       </option>
 
-      {selectOptions.map((option) => (
+      {selectOptions.map((option: string) => (
         <option key={option} className="text-normal sm:text-md">
           {option}
         </option>
