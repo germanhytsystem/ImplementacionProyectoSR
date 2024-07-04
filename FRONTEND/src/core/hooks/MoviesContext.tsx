@@ -37,7 +37,7 @@ export const MoviesProvider = (props: IProps) => {
   const { data: movieslist } = useListMoviesAll();
 
   useEffect(() => {
-    console.log("movieslist", movieslist);
+    // console.log("movieslist", movieslist);
     if (movieslist) {
       setMovies(movieslist);
     }
