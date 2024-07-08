@@ -24,8 +24,10 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
   return (
     <>
       <section className="w-full container mx-auto my-8 sm:my-10">
-        <div
-          className="
+        {page === "home"  && (
+          <>
+            <div
+              className="
                         flex
 						flex-col
 						sm:flex-row						
@@ -35,12 +37,12 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
                         pb-3
                         gap-3
                         "
-        >
-          <div className="flex justify-between gap-4">
-            <span className="flex items-center">UserID</span>
-            <input
-              ref={inputdata}
-              className=" 
+            >
+              <div className="flex justify-between gap-4">
+                <span className="flex items-center">UserID</span>
+                <input
+                  ref={inputdata}
+                  className=" 
                         pl-3
                         pr-1
                         sm:px-4
@@ -56,27 +58,29 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
                         w-full
                         sm:w-fit
                         "
-              id="name"
-              name="name"
-              type="number"
-              placeholder="Ejm: 50"
-              aria-label="Name"
-            />
-            <button
-              className="
+                  id="name"
+                  name="name"
+                  type="number"
+                  placeholder="Ejm: 50"
+                  aria-label="Name"
+                />
+                <button
+                  className="
                 bg-primary-dark
                 text-primary-light
                 font-bold
                 py-2
                 px-4
                 rounded-md"
-              type="button"
-              onClick={handleUserId}
-            >
-              Recomendar
-            </button>
-          </div>
-        </div>
+                  type="button"
+                  onClick={handleUserId}
+                >
+                  Recomendar
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </section>
       <section className="container mx-auto my-10">
         {moviesRecomendList !== undefined && moviesRecomendList.length > 0 ? (
@@ -106,14 +110,14 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
                     ))}
               </div>
             ) : (
-              <div className="w-full mx-auto min-h-[300px] my-20 ">
+              <div className="w-full mx-auto min-h-[500px] my-20 ">
                 <div className="text-center font-bold">Loading...</div>
               </div>
             )}
           </>
         ) : (
           <>
-            <div className="w-full mx-auto min-h-[300px] my-20 ">
+            <div className="w-full mx-auto min-h-[500px] my-20 ">
               <div className="text-center font-bold">Loading...</div>
             </div>
           </>

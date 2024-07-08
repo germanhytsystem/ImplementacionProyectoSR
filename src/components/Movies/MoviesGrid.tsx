@@ -98,6 +98,9 @@ const MoviesGrid = ({ page }: IProps) => {
       </section>
 
       <section className="container mx-auto my-10">
+        <div className="flex justify-center items-center text-xl">
+          Puntúa las peliculas en base a tu experiencia
+        </div>
         {movies !== undefined && movies.length > 0 ? (
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
             {selectedGenre

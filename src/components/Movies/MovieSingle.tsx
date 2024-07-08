@@ -16,6 +16,8 @@ const MovieSingle = ({
   prediction,
   page,
 }: IProps) => {
+  console.log(title, genres, numbermovie, prediction, page);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,10 +31,14 @@ const MovieSingle = ({
       {page === "home" ? (
         <>
           <Link
-            to={`/peliculas/single/${numbermovie}`}
-            aria-label="Single Project"
+            to={`/peliculas/${numbermovie}`}
+            state={{
+              title: title,
+              genres: genres,
+              prediction: prediction,
+            }}
           >
-            <div className="lg:min-h-[400px] xl:min-h-[420px] rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.1] transition-all duration-500 cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
+            <div className="lg:min-h-[400px] xl:min-h-[420px] rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.1] transition-all duration-500 cursor-pointer mb-10 sm:mb-0 bg-secondary-light">
               <div>
                 <img
                   src="https://res.cloudinary.com/dvammrjzi/image/upload/v1708229239/DAVID-PORTFOLIO/gratis-png-tira-de-pelicula-formato-psd_n88lir.png"
@@ -58,28 +64,39 @@ const MovieSingle = ({
         </>
       ) : (
         <>
-          <div className="lg:min-h-[400px] xl:min-h-[420px] rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
-            <div>
-              <img
-                src="https://res.cloudinary.com/dvammrjzi/image/upload/v1708229239/DAVID-PORTFOLIO/gratis-png-tira-de-pelicula-formato-psd_n88lir.png"
-                className="rounded-t-xl border-none w-full object-cover"
-                alt="Single Project"
-              />
-            </div>
-            <div className="text-center px-4 py-6">
-              <p className="font-bold break-all font-general-medium text-lg md:text-xl text-ternary-dark  mb-2">
-                {title}
-              </p>
-              <span className="break-all  text-lg text-ternary-dark ">
-                {genres}
-              </span>
-              {prediction && (
+          <Link
+            to={`/peliculas/${numbermovie}`}
+            aria-label="Single Project"
+            state={{
+              title,
+              genres,
+              numbermovie,
+              prediction,
+            }}
+          >
+            <div className="lg:min-h-[400px] xl:min-h-[420px] rounded-xl shadow-lg hover:shadow-xl  hover:scale-[1.1] transition-all duration-500 cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
+              <div>
+                <img
+                  src="https://res.cloudinary.com/dvammrjzi/image/upload/v1708229239/DAVID-PORTFOLIO/gratis-png-tira-de-pelicula-formato-psd_n88lir.png"
+                  className="rounded-t-xl border-none w-full object-cover"
+                  alt="Single Project"
+                />
+              </div>
+              <div className="text-center px-4 py-6">
+                <p className="font-bold break-all font-general-medium text-lg md:text-xl text-ternary-dark  mb-2">
+                  {title}
+                </p>
                 <span className="break-all  text-lg text-ternary-dark ">
-                  {prediction}
+                  {genres}
                 </span>
-              )}
+                {prediction && (
+                  <span className="break-all  text-lg text-ternary-dark ">
+                    {prediction}
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
+          </Link>
         </>
       )}
     </motion.div>

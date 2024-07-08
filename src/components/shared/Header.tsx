@@ -30,7 +30,7 @@ const Navbar = () => {
             {/* Logo*/}
             <Link to="/">
               <div className="text-3xl sm:text-4xl font-semibold">
-                MovieLens
+                Sistema de Recomendación
               </div>
             </Link>
             {/* Menu in responsive */}
@@ -56,11 +56,19 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden sm:flex">
-            {pathname !== "/recomendacion" && (
+            {pathname === "/peliculas" || pathname === "/" ? (
               <>
                 <Link to="/recomendacion">
                   <div className="bg-secondary-light px-4 py-2 rounded-[5px] text-black font-semibold hover:scale-[1.1] transition-all duration-300">
-                    Recomendación
+                    Recomendaciones
+                  </div>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/">
+                  <div className="bg-red-600 px-4 py-2 rounded-[5px] text-black font-semibold hover:scale-[1.1] transition-all duration-300">
+                    Atras
                   </div>
                 </Link>
               </>
